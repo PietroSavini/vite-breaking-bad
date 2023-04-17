@@ -23,13 +23,18 @@
 </template>
 
 <style scoped lang="scss">
+
 header{
     background-color: black;
+    box-shadow: 0px 10px 10px rgba($color: #151414, $alpha: .5);
+    position: relative;
+    z-index: 2;
     .ms_wrapper{
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 1rem;
+
         img{
             height: 150px;
             display: block;

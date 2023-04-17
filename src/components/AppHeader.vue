@@ -1,9 +1,9 @@
 <script >
-    import {getImgUrl} from"../assests/helpers/helpers.js";
+    import {getImgUrl} from "../assests/helpers/helpers.js";
     export default{
         data(){
             return{
-                logo: "logo.png"
+                logo: "logo.png",
             }
         },
         methods:{
@@ -24,10 +24,16 @@
 
 <style scoped lang="scss">
 header{
-    height: 100px;
     background-color: black;
     .ms_wrapper{
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        img{
+            height: 150px;
+            display: block;
+        }
     }
 }
 </style>

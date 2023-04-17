@@ -62,7 +62,11 @@
                 overflow-y: auto;
                 border-radius: 15px;
                 box-shadow: inset 0 0 10px 10px black;
-            }
+                &::-webkit-scrollbar {
+                    width: 2px;    
+                }
+                
+            }   
         }
     }
 </style>

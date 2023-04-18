@@ -10,6 +10,17 @@
       }
       
     },
+    methods:{
+      filterFromArchetype(){
+        axios.get(store.getUrl,{
+          params:{
+            archetype: this.store.selectedValue
+          }
+        }).then((resp)=>{
+          this.store.cardArray = resp.data.data
+        })
+      }
+    },
 
     components:{
       AppHeader,
@@ -26,7 +37,7 @@
 
 <template>
   <AppHeader/>
-  <AppMain />
+  <AppMain @filter="filterFromArchetype"/>
 </template>
 
 <style lang="scss">

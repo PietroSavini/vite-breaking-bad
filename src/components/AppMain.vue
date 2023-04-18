@@ -1,10 +1,18 @@
 <script>
-    import{getImgUrl} from "../assests/helpers/helpers.js"
-    import AppCard from "./AppCard.vue"
+    import{getImgUrl} from "../assests/helpers/helpers.js";
+    import AppCard from "./AppCard.vue";
+    import {store} from "../store.js";
     export default{
+        emits:["filter"],
         data(){
             return{
+                store,
                 imgPath:"bg.png",
+                options:[
+                    "Alien",
+                    "Ally of Justice", 
+                    "Ancient Gear",
+                ]
             }
             
         },
@@ -20,8 +28,13 @@
 
 <template>
     <section>
+        <select name="" id="" v-model="store.selectedValue" @change="$emit('filter')">
+            <option value="">--filter by Archetype--</option>
+            <option v-for="option in options" :value="option">{{option}}</option>
+        </select>
         <div class="ms_container">
             <img :src="getImgUrl(imgPath)" alt="">
+           
             <main>
                 <div class="container">
                     <div class="row ">
@@ -38,6 +51,19 @@
         background-color:#0d0c0c;
         background-image: repeating-linear-gradient(-45deg, rgba(33, 31, 31, 0.1), rgba(51, 49, 49, 0.1) 1px, transparent 1px, transparent 6px);
         background-size: 4px 4px;
+        position: relative;
+        
+
+        select{
+            position: absolute;
+            top:20px;
+            left:50%;
+            transform:translateX(-50%);
+            background-color: #323232;
+            color: #fff;
+            border-radius: 5px;
+            outline: none;
+        }
         .ms_container{
             width: 95%;
             position: relative;

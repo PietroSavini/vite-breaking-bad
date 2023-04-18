@@ -36,7 +36,7 @@ header{
         padding: 1rem;
 
         img{
-            height: 150px;
+            height: 100px;
             display: block;
         }
     }
